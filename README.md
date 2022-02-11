@@ -14,7 +14,7 @@
 ## Стэк/Инструменты/Данные
 
 
-- [maintainer.io](https://maintainer.io/) - Free README - [ai/size-limit](https://github.com/ai/size-limit#readme) - Ссылка с описанием
+- [maintainer.io](https://maintainer.io/) - Free README Ссылка с описанием
 
 ## Contribute
 

@@ -6,10 +6,10 @@ from datetime import date
 class Person(DB.Model):
     __tablename__ = 'persons'
     id = DB.Column(DB.Integer, primary_key=True)
-    gender = DB.Column(DB.String(15), nullable=False)
-    birthdate = DB.Column(DB.Date, nullable=False)
-    subject = DB.Column(DB.String(30), nullable=False)
-    locality = DB.Column(DB.String(30), nullable=False)
+    gender = DB.Column(DB.String(15), nullable=True)
+    birthdate = DB.Column(DB.Date, nullable=True)
+    subject = DB.Column(DB.String(30), nullable=True)
+    locality = DB.Column(DB.String(30), nullable=True)
     disability_information = DB.relationship('DisabilityInformation', backref='persons', lazy=True, uselist=False)
     additional_information = DB.relationship('AdditionalInformation', backref='persons', lazy=True, uselist=False)
 
@@ -64,9 +64,11 @@ class PersonSchema(MA.SQLAlchemyAutoSchema):
     age = fields.Method("get_age")
 
     def get_age(self, obj):
-        today = date.today()
-        born = obj.birthdate
-        return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
+        if obj.birthdate is not None:
+            today = date.today()
+            born = obj.birthdate
+            return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
+        return None
 
 
 persons_schema = PersonSchema(many=True)

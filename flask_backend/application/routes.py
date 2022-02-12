@@ -7,7 +7,3 @@ persons = persons_schema.dump(Person.query.all())
 @app.route("/index", methods=["GET"])
 def index():
     return jsonify(persons)
-
-
-
-

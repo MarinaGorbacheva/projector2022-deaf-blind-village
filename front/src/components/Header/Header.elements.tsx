@@ -41,20 +41,21 @@ export const SwitchTheme = styled.div<{ mob?: boolean; admin?: boolean; auth?: b
   }
 `;
 
-export const Btn = styled(Button) <{ yellow?: boolean; }>`
+export const Btn = styled(Button) <{ yellow?: boolean; mr20?: boolean; }>`
   padding: 12px 20px;
   display: inline-block;
   text-transform: uppercase;
 
-/* синий */
-border-radius: 17px;
-flex: none;
-order: 0;
-flex-grow: 0;
-margin: 0px 0px;
+  border-radius: 17px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 0px;
 
-background: ${({ yellow }) => yellow ? '#C87E04' : '#085488'};
-color: #FFFFFF;
+  margin-right: ${({ mr20 }) => mr20 ? '20px' : '0'};
+  
+  background: ${({ yellow }) => yellow ? '#C87E04' : '#085488'};
+  color: #FFFFFF;
 `;
 
 export const AdminButton = styled(Btn)`

@@ -36,7 +36,7 @@ export const Container = styled.div<{
   ${(props) => {
     if (props.page) {
       return `
-        margin-top: 60px;
+        margin-top: 20px;
         @media (max-width: 767px) {
           margin-top: ${props.mtNone ? '0' : '20px'};
         }

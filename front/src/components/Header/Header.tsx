@@ -86,11 +86,11 @@ export const Header: FC<Props> = ({ admPanel }: Props) => {
     }
 
     function handleNeedHelpClick() {
-        history.push(`/login/0`);
+        window.open('https://so-edinenie.org/slepogluhimpredstavitelyam');
     }
 
     function handleWantHelpClick() {
-        history.push('/');
+        window.open('https://www.deafblindacademy.ru/donate');
     }
 
     return (
@@ -109,7 +109,7 @@ export const Header: FC<Props> = ({ admPanel }: Props) => {
                                 lang={lang}
                             />
                         </HeaderMenu>
-                        <Btn yellow onClick={handleWantHelpClick}>
+                        <Btn yellow mr20 onClick={handleWantHelpClick}>
                             Xочу помочь
                         </Btn>
                         <Btn onClick={handleNeedHelpClick}>

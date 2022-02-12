@@ -40,17 +40,44 @@ export const HowToHelp = () => {
         <>
             <Page id="HowToHelp" pBottom>
                 <HelpContainer>
-                    <H2>Что такое «деревня»?</H2>
-                    <ContactBlock>
 
-                    </ContactBlock>
-                    <ContactBlock>
+                    <H2>Как помочь людям со слепоглухотой?</H2>
+                    <BlocksContainer pNone>
+                        <ContactBlock>
 
-                    </ContactBlock>
-                    <PartnersItemTitle>
+                            <ContactText>
+                                помочь фонду «Со-единение»
+                            </ContactText>
+                            <ContactText>
+                                https://so-edinenie.org
+                            </ContactText>
+                            <ContactText>
+                                +7 (495) 212-92-09
+                            </ContactText>
+
+                        </ContactBlock>
+                        <ContactBlock>
+
+                            <ContactText>
+                                помочь «Ясеневой поляне»
+                            </ContactText>
+                            <ContactText>
+                                https://www.deafblindacademy.ru
+                            </ContactText>
+                            <ContactText>
+                                +7 (916) 060-02-74
+                            </ContactText>
+                            <ContactText>
+                                подписаться на наш инстаграм <br /> @yaseneva_polyana
+                            </ContactText>
+
+                        </ContactBlock>
+                        {/* <PartnersItemTitle>
                         Согласно данным Росстата, на 1 ноября 2021 года в России проживало 145,7 млн человек. Из них Фонд «Со-единение» зафиксировал 4372 человека со слепоглухотой. Много это или мало?
-                    </PartnersItemTitle>
+                    </PartnersItemTitle> */}
+                    </BlocksContainer>
                 </HelpContainer>
+
             </Page>
         </>
     );
@@ -58,12 +85,33 @@ export const HowToHelp = () => {
 
 const HelpContainer = styled(Container)`
     display: flex;
+    flex-direction: column;
+`;
+
+const ContactText = styled.div`
+    font-style: normal;
+    font-weight: normal;
+    font-size: 33px;
+    line-height: 40px;
+
+    color: #FFFFFF;
+`;
+
+const BlocksContainer = styled(Container)`
+    display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 0px;
+    margin-top: 10px;
 `;
 
 const ContactBlock = styled.div`
     display: flex;
     flex-direction: column;
+    background: #F8B03A;
+    border-radius: 7px;
+    padding: 10px;
 `;
 
 

@@ -49,7 +49,7 @@ export const Main: FC = () => {
             <MainPage id="banner">
                 <Banner />
                 <Tariffs />
-                {/* <Map /> */}
+                <Map />
                 <Tariffs />
                 {/* <DrawHistory onOpenModal={onOpenModal} clock={clock} /> */}
                 <Footer />

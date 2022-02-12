@@ -59,7 +59,7 @@ export const Nav: FC<Props> = ({
                     </StyledLink>
                 </ListItem>
                 <ListItem>
-                    <StyledLink to="/#" onClick={onClose} scroll={(el: any) => scrollWidthOffset(el)}>
+                    <StyledLink to="/#map" onClick={onClose} scroll={(el: any) => scrollWidthOffset(el)}>
                         карта
                     </StyledLink>
                 </ListItem>

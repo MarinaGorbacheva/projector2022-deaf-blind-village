@@ -6,6 +6,7 @@ import { DeckGL } from "@deck.gl/react";
 import { Container } from '../../../../components/UI/Container';
 import { Page } from '../../../../components/UI/Page';
 import { H2 } from '../../../../components/UI/Heading';
+import styled from "styled-components";
 
 const coordinatesData = [
     {
@@ -120,12 +121,13 @@ export const Map: FC = () => {
 
     return (
         <>
-            <Page id="lottery" pBottom>
+            <Page id="map" pBottom>
                 <Container>
                     <H2 center>Что такое «деревня»?</H2>
                 </Container>
                 <Container pNone page mtNone>
                     <DeckGL
+                        // style={{ position: "relative" }}
                         viewState={viewState}
                         onViewStateChange={(data: any) => setViewState(data.viewState)}
                         controller={true}
@@ -151,4 +153,8 @@ export const Map: FC = () => {
     );
 }
 
+
+const Deck = styled(DeckGL)`
+    position: relative;;
+`;
 

@@ -50,6 +50,7 @@ class AdditionalInformation(DB.Model):
     working = DB.Column(DB.Boolean, nullable=True)
     working_willingness = DB.Column(DB.Boolean, nullable=True)
     living_conditions = DB.Column(DB.Text, nullable=True)
+    recording_date = DB.Column(DB.Date, nullable=False)
 
 
 class PersonSchema(MA.SQLAlchemyAutoSchema):

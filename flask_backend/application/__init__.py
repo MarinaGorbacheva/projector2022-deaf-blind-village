@@ -22,3 +22,4 @@ def create_app():
         DB.create_all()
 
     return app
+

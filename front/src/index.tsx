@@ -6,10 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import { ThemesProvider } from './context/ThemeContext';
 
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <ThemesProvider>
+            <App />
+        </ThemesProvider>,
     </React.StrictMode>,
     document.getElementById('root')
 );

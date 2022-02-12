@@ -1,15 +1,13 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { FC, useState, useRef, useEffect } from 'react';
 import { Container } from '../../../../components/UI/Container';
 import { H2 } from '../../../../components/UI/Heading';
 import { Page } from '../../../../components/UI/Page';
 import styled from 'styled-components';
 
 
-export const DbVillageIs = () => {
-    const [isNormalOpen, setIsNormalOpen] = useState(false);
+export const DbVillageIs: FC = () => {
     const [oldLink, setOldLink] = useState('');
     const [link, setLink] = useState('');
-    const [min, setMin] = useState(500);
     const [value, setValue] = useState('');
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -19,17 +17,6 @@ export const DbVillageIs = () => {
             inputRef.current.focus();
         }
     }, [value, inputRef]);
-
-    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const id = e.target.value;
-        setValue(id);
-        const newLink = oldLink.replace(/\d{5,}/g, '');
-        if (id === '') {
-            setLink(newLink);
-        } else {
-            setLink(newLink + id);
-        }
-    };
 
     const toLink = () => {
         window.open(link);

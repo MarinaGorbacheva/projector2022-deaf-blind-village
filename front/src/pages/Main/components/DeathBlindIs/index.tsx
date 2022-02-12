@@ -1,14 +1,13 @@
-import React, { useState, useRef, useEffect, useContext } from 'react';
+import React, { FC, useState, useRef, useEffect } from 'react';
 import { Container } from '../../../../components/UI/Container';
 import { H2 } from '../../../../components/UI/Heading';
 import { Page } from '../../../../components/UI/Page';
 import styled from 'styled-components';
 
 
-export const DeathBlindIs = () => {
+export const DeathBlindIs: FC = () => {
     const [oldLink, setOldLink] = useState('');
     const [link, setLink] = useState('');
-    const [min, setMin] = useState(500);
     const [value, setValue] = useState('');
     const inputRef = useRef<HTMLInputElement>(null);
 

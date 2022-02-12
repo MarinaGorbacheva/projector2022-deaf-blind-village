@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useContext } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Container } from '../../../../components/UI/Container';
 import { H2 } from '../../../../components/UI/Heading';
 import { Page } from '../../../../components/UI/Page';
@@ -6,10 +6,8 @@ import styled from 'styled-components';
 
 
 export const HowToHelp = () => {
-    const [isNormalOpen, setIsNormalOpen] = useState(false);
     const [oldLink, setOldLink] = useState('');
     const [link, setLink] = useState('');
-    const [min, setMin] = useState(500);
     const [value, setValue] = useState('');
     const inputRef = useRef<HTMLInputElement>(null);
 

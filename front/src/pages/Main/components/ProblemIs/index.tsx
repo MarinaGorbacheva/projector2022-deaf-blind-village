@@ -1,11 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, FC } from 'react';
 import { Container } from '../../../../components/UI/Container';
 import { H2 } from '../../../../components/UI/Heading';
 import { Page } from '../../../../components/UI/Page';
 import styled from 'styled-components';
 
 
-export const ProblemIs = () => {
+export const ProblemIs: FC = () => {
     const [oldLink, setOldLink] = useState('');
     const [link, setLink] = useState('');
     const [value, setValue] = useState('');

@@ -3,12 +3,6 @@ import { HeaderNav, List, ListItem, StyledLink } from './Header.elements';
 
 type Props = {
     onClose: () => void;
-    handleClick: () => void;
-    user: null | false | string;
-    logOut: () => void;
-    location: string;
-    admin: boolean | null;
-    lang: string;
 };
 
 export const Nav: FC<Props> = ({ onClose }: Props) => {

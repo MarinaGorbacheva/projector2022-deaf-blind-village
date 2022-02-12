@@ -1,13 +1,24 @@
 import './App.css';
-import { Main } from './pages/Main';
+// import { Main } from './pages/Main';
+import { Map } from './components/Map'
 
-function App() {
+import { FC } from 'react';
+
+
+
+const App: FC = () => {
+
+
+
 	return (
 		<>
 			<div className="App">
 				jjj
 			</div>
-			<Main />
+			{/* <Main /> */}
+
+			<Map />
+
 		</>
 	);
 }

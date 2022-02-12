@@ -6,17 +6,17 @@ import { DeckGL } from "@deck.gl/react";
 
 const coordinatesData = [
     {
-        name: "Lafayette (LAFY)",
-        code: "LF",
-        address: "3601 больных",
+        name: "г. Москва, Москва",
+        code: "77",
+        address: "3601 глухонемых",
         entries: "3481",
         exits: "3616",
         coordinates: [37.6173, 55.7558]
     },
     {
-        name: "Lafayette (LAFY)",
-        code: "LF",
-        address: "3601 больных",
+        name: "г. Майкоп, Республика Адыгея",
+        code: "01",
+        address: "3452 глухонемых",
         entries: "3481",
         exits: "3616",
         coordinates: [40.1047, 44.6076]

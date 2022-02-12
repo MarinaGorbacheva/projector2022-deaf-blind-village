@@ -84,12 +84,11 @@ export const SlideItemWrap = styled.div`
 
 export const SlideItem = styled.div<{ bg: string }>`
   width: 100%;
-  height: 724px;
+  height: 1324px;
   position: relative;
-  background: #3f3e4e url(${(props) => props.bg}) no-repeat center;
+  background: transparent url(${(props) => props.bg}) no-repeat center;
   background-size: cover;
   padding-top: 204px;
-  box-shadow: inset 0 0 25px rgba(101, 114, 126, 50), inset 0 0 25px rgba(140, 150, 170, 50), inset 0 0 25px rgb(83, 94, 104), inset 0 0 25px rgb(86, 96, 106);
 
   @media (max-width: 1100px) {
     height: 610px;

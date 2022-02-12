@@ -9,14 +9,14 @@ export const Banner: FC = () => {
     return (
         <>
             <Carousel />
-            <S.DescWrap>
+            {/* <S.DescWrap>
                 <Container>
                     <H2 mb>Деревня слепоглухих</H2>
                     <S.Desc>
                         Деревня слепоглухих - текст текст текст текст текст текст текст!
                     </S.Desc>
                 </Container>
-            </S.DescWrap>
+            </S.DescWrap> */}
         </>
     );
 };

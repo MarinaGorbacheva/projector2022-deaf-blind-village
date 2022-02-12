@@ -1,62 +1,43 @@
-import React, { FC, useContext, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import styled from 'styled-components';
 import { Footer } from '../../components/Footer/Footer';
 import { Header } from '../../components/Header/Header';
 import { Page } from '../../components/UI/Page';
-import { Prize } from '../../types/drawResult';
 import { Banner } from './components/Banner/Banner';
-import { Tariffs } from './components/Tariffs/Tariffs';
-import { DrawHistory } from './components/DrawHistory/DrawHistory';
+import { HowToHelp } from './components/HowToHelp';
+import { DbVillageIs } from './components/DbVillageIs';
+import { DeathBlindIs } from './components/DeathBlindIs';
+import { ProblemIs } from './components/ProblemIs';
+import { Materials } from './components/Materials';
+
 import { Map } from './components/Map';
+// import { Container } from '../../../components/UI/Container';
 
 export const Main: FC = () => {
-    const [clock, setClock] = useState<number | null>(null);
-    const [showModal, setShowModal] = useState(false);
-    const [showModalCongrats, setShowModalCongrats] = useState(false);
-    const [showTimer, setShowTimer] = useState(true);
-    const [drawResult, setDrawResult] = useState<any | null>(null);
-
-    const [result, setResult] = useState<Prize | null>(null);
-    const [winName, setWinName] = useState<string | null>(null);
-
-
-    useEffect(() => {
-        setShowModal(false);
-        setDrawResult(null);
-    }, []);
-
-    const winnerResult = (res: Prize) => {
-        setResult(res);
-    };
-
-    const closeTimer = (e: React.MouseEvent) => {
-        e.stopPropagation();
-        setShowTimer(false);
-    };
-
-
-
-
-    const onOpenModal = () => {
-        setShowModal(true);
-        setDrawResult(null);
-    };
-
 
     return (
         <div>
             <Header />
             <MainPage id="banner">
                 <Banner />
-                <Tariffs />
+                <DbVillageIs />
+                <DeathBlindIs />
+                <ProblemIs />
+                <Materials />
+
+
                 <Map />
-                <Tariffs />
-                {/* <DrawHistory onOpenModal={onOpenModal} clock={clock} /> */}
+                <HowToHelp />
+
                 <Footer />
             </MainPage>
         </div>
     );
 };
+
+const Title = styled.h1`
+
+`;
 
 const MainPage = styled(Page)`
   position: relative;

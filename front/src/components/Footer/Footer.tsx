@@ -18,46 +18,61 @@ export const Footer: FC<FooterType> = ({ other }: FooterType) => {
 
     return (
         <FooterBlock other={other}>
-            <Container>
-                <FooterHeader>
-                    {/* <FooterLogo className="logo" /> */}
-                    <P>
-                        Прожектор 2022.
-                    </P>
+            <FooterContainer>
+                {/* <FooterHeader>
+                    <P>Прожектор 2022.</P>
                     <FooterLinks>
-                        <FooterLink to="/#deposits" scroll={(el) => scrollWidthOffset(el)}>
-                            Тарифы и программы
-                        </FooterLink>
-                        <FooterLink to="/#lottery" scroll={(el) => scrollWidthOffset(el)}>
-                            Розыгрыши
-                        </FooterLink>
-                        <FooterLink to="/#lottery" scroll={(el) => scrollWidthOffset(el)}>
-                            Обмены
-                        </FooterLink>
                         <FooterLink to="/#banner" scroll={(el) => scrollWidthOffset(el)}>
-                            Правила
+                            Наверх
                         </FooterLink>
                     </FooterLinks>
-                </FooterHeader>
-                <FooterDesc>
-                    Хакатон Теплицы социальных технологий и Новой газеты
-                </FooterDesc>
-                <FooterDesc>
-                    Ресурсный центр «Ясенева Поляна» / Академия «Со-единение»
-                    Россия, Франция,
+                </FooterHeader> */}
 
-                </FooterDesc>
-                <FooterDesc>
-                    11-13 февраля 2022
-
-                </FooterDesc>
-                {/* <TargetLink target="_blank" rel="noreferrer" href="https:/t.me/joinchat/E_Acz5BKQnJlNTVi">
-                    <Tg className="tg" />
-                </TargetLink> */}
-            </Container>
+                <DescBlock>
+                    <FooterDesc>
+                        Хакатон Теплицы социальных технологий и Новой газеты
+                    </FooterDesc>
+                    <FooterDesc>
+                        Ресурсный центр «Ясенева Поляна» / Академия «Со-единение»
+                    </FooterDesc>
+                    <FooterDesc>
+                        11-13 февраля 2022
+                    </FooterDesc>
+                </DescBlock>
+                <DescBlock>
+                    <FooterDesc smallMg>
+                        Координатор проекта и сотрудник фонда «Ясенева поляна» - Лера Душкина
+                    </FooterDesc>
+                    <FooterDesc smallMg>
+                        Научный консультант - Алина Хохлова
+                    </FooterDesc>
+                    <FooterDesc smallMg>
+                        Графический дизайнер - Александра Мороз
+                    </FooterDesc>
+                    <FooterDesc smallMg>
+                        Frontend-разработчик - Алим Шогенов
+                    </FooterDesc>
+                    <FooterDesc smallMg>
+                        Backend-разработчик - Марина Горбачева
+                    </FooterDesc>
+                </DescBlock>
+            </FooterContainer>
         </FooterBlock >
     );
 };
+
+const FooterContainer = styled(Container)`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+`;
+
+const DescBlock = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
+
 
 const P = styled.p`
   color: #ffffff;
@@ -160,8 +175,8 @@ const FooterLink = styled(NavHashLink)`
   }
 `;
 
-const FooterDesc = styled.h3`
-  margin-bottom: 38px;
+const FooterDesc = styled.h3<{ smallMg?: boolean }>`
+  margin-bottom: ${({ smallMg }) => smallMg ? '10px' : '38px'};
   color: #fff;
   opacity: ${({ theme }) => theme.charts.chartOpacityBtn};
   font-weight: 400;

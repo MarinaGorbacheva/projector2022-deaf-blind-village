@@ -41,20 +41,20 @@ export const SwitchTheme = styled.div<{ mob?: boolean; admin?: boolean; auth?: b
   }
 `;
 
-export const Btn = styled(Button) <{ hide?: boolean; header?: boolean }>`
+export const Btn = styled(Button) <{ yellow?: boolean; }>`
   padding: 12px 20px;
-  display: ${(props) => (props.hide ? 'none' : 'inline-block')};
+  display: inline-block;
   text-transform: uppercase;
 
-  ${({ header }) => {
-        if (header) {
-            return `
-        @media (max-width: 1100px) {
-          display: none;
-        }
-      `;
-        }
-    }}
+/* синий */
+border-radius: 17px;
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 0px;
+
+background: ${({ yellow }) => yellow ? '#C87E04' : '#085488'};
+color: #FFFFFF;
 `;
 
 export const AdminButton = styled(Btn)`
@@ -121,6 +121,8 @@ export const HeaderWrap = styled.header<{ header?: boolean }>`
   height: 98px;
   transition: all 0.3s ease 0s;
   background: #2E2422;
+  box-shadow: 0px -2px 23px 0px white;
+  
   @media (max-width: 768px) {
     height: 60px;
     padding: 15px 0;
@@ -242,48 +244,20 @@ export const List = styled.ul`
   }
 `;
 
-export const ListItem = styled.li<{ mob?: boolean }>`
-  display: ${(props) => props.mob && 'none'};
+export const ListItem = styled.li`
   position: relative;
-  padding-right: 40px;
-  ${Languale} {
-    display: none;
-  }
-  &:nth-child(4) {
-    padding-right: 0;
-  }
-  &:last-child {
-    display: none;
-  }
-  @media (max-width: 1100px) {
-    display: ${(props) => props.mob && 'none'};
-    width: 100%;
-    padding: 20px 0px;
-    border-top: 1px solid ${(props) => props.theme.listBorder};
-    text-align: center;
-    ${Languale} {
-      display: flex;
-      cursor: initial;
-    }
-    ${SwitchTheme} {
-      display: block;
-      cursor: initial;
-    }
-  }
-  @media (max-width: 767px) {
-    display: ${(props) => props.mob && 'block'};
-    &:last-child {
-      display: block;
-    }
+  padding-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:nth-child(1) {
+    /* width: auto; */
   }
 `;
 
 const activeclassname = 'active';
 
 export const StyledLink = styled(NavHashLink).attrs({ activeclassname })`
-  &.${activeclassname} {
-    color: red;
-  }
   color: ${({ theme }) => theme.main.bodyColor};
   font-weight: 500;
   font-size: 12px;
@@ -291,6 +265,11 @@ export const StyledLink = styled(NavHashLink).attrs({ activeclassname })`
   cursor: pointer;
   transition: all 0.3s ease 0s;
   text-transform: uppercase;
+  text-align: center;
+
+  &:hover {
+    color: green
+  }
 `;
 
 export const LinkButton = styled.div<{ mob?: boolean; }>`

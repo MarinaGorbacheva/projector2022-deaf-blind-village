@@ -1,6 +1,5 @@
-import { FC, useContext } from 'react';
-import { ThemeContext } from '../../context/ThemeContext';
-import { HeaderNav, LinkButton, List, ListItem, StyledLink } from './Header.elements';
+import { FC } from 'react';
+import { HeaderNav, List, ListItem, StyledLink } from './Header.elements';
 
 type Props = {
     onClose: () => void;
@@ -12,16 +11,7 @@ type Props = {
     lang: string;
 };
 
-export const Nav: FC<Props> = ({
-    onClose,
-    handleClick,
-    user,
-    logOut,
-    location,
-    admin,
-    lang,
-}: Props) => {
-    const { toggleTheme, theme } = useContext(ThemeContext);
+export const Nav: FC<Props> = ({ onClose }: Props) => {
 
     const scrollWidthOffset = (el: any) => {
         const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
@@ -33,24 +23,28 @@ export const Nav: FC<Props> = ({
         <HeaderNav>
             <List>
                 <ListItem>
-                    <StyledLink to="/#deposits" onClick={onClose} scroll={(el: any) => scrollWidthOffset(el)}>
-                        что такое «деревня»
+                    <StyledLink to="/#DbVillageIs" onClick={onClose} scroll={(el: any) => scrollWidthOffset(el)}>
+                        ЧТО ТАКОЕ «ДЕРЕВНЯ СЛЕПОГЛУХИХ»
                     </StyledLink>
                 </ListItem>
                 <ListItem>
-                    <StyledLink to="/#lottery" onClick={onClose} scroll={(el: any) => scrollWidthOffset(el)}>
-                        кто такие слепоглухие
+                    <StyledLink to="/#DeathBlindIs" onClick={onClose} scroll={(el: any) => scrollWidthOffset(el)}>
+                        КТО ТАКИЕ СЛЕПОГЛУХИЕ
                     </StyledLink>
                 </ListItem>
                 <ListItem>
-                    <StyledLink to="/#" onClick={onClose} scroll={(el: any) => scrollWidthOffset(el)}>
-                        о проекте
+                    <StyledLink to="/#ProblemIs" onClick={onClose} scroll={(el: any) => scrollWidthOffset(el)}>
+                        ПРОБЛЕМА
                     </StyledLink>
                 </ListItem>
-
                 <ListItem>
-                    <StyledLink to="/#" onClick={onClose} scroll={(el: any) => scrollWidthOffset(el)}>
-                        цель
+                    <StyledLink to="/#Materials" onClick={onClose} scroll={(el: any) => scrollWidthOffset(el)}>
+                        ДАННЫЕ
+                    </StyledLink>
+                </ListItem>
+                <ListItem>
+                    <StyledLink to="/#Map" onClick={onClose} scroll={(el: any) => scrollWidthOffset(el)}>
+                        карта
                     </StyledLink>
                 </ListItem>
                 <ListItem>
@@ -59,39 +53,9 @@ export const Nav: FC<Props> = ({
                     </StyledLink>
                 </ListItem>
                 <ListItem>
-                    <StyledLink to="/#map" onClick={onClose} scroll={(el: any) => scrollWidthOffset(el)}>
-                        карта
-                    </StyledLink>
-                </ListItem>
-                <ListItem>
-                    <StyledLink to="/#" onClick={onClose} scroll={(el: any) => scrollWidthOffset(el)}>
-                        общий анализ карты
-                    </StyledLink>
-                </ListItem>
-                <ListItem>
-                    <StyledLink to="/#" onClick={onClose} scroll={(el: any) => scrollWidthOffset(el)}>
-                        графики - динамику/тренды
-                    </StyledLink>
-                </ListItem>
-                <ListItem>
-                    <StyledLink to="/#" onClick={onClose} scroll={(el: any) => scrollWidthOffset(el)}>
-                        заключение
-                    </StyledLink>
-                </ListItem>
-                <ListItem>
-                    <StyledLink to="/#" onClick={onClose} scroll={(el: any) => scrollWidthOffset(el)}>
+                    <StyledLink to="/#HowToHelp" onClick={onClose} scroll={(el: any) => scrollWidthOffset(el)}>
                         как помочь
                     </StyledLink>
-                </ListItem>
-
-                <ListItem mob>
-                    <LinkButton mob onClick={toggleTheme}>{theme === "dark" ? "Светлая тема" : "Темная тема"}</LinkButton>
-                </ListItem>
-                <ListItem mob>
-                    <LinkButton mob>{lang.toUpperCase()}</LinkButton>
-                </ListItem>
-                <ListItem mob>
-                    <LinkButton mob onClick={handleClick}>{user ? 'headerButton.personalArea' : "Войти"}</LinkButton>
                 </ListItem>
             </List>
         </HeaderNav>

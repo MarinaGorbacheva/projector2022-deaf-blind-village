@@ -1,11 +1,11 @@
-import React, { useState, useRef, useEffect, useContext } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Container } from '../../../../components/UI/Container';
 import { H2 } from '../../../../components/UI/Heading';
 import { Page } from '../../../../components/UI/Page';
 import styled from 'styled-components';
 
 
-export const Tariffs = () => {
+export const DbVillageIs = () => {
     const [isNormalOpen, setIsNormalOpen] = useState(false);
     const [oldLink, setOldLink] = useState('');
     const [link, setLink] = useState('');
@@ -38,19 +38,15 @@ export const Tariffs = () => {
 
     return (
         <>
-            <Page id="lottery" pBottom>
+            <Page id="DbVillageIs" pBottom>
                 <Container>
-                    <H2 center>Что такое «деревня»?</H2>
+                    <H2>ЧТО ТАКОЕ «ДЕРЕВНЯ СЛЕПОГЛУХИХ»?</H2>
                 </Container>
                 <Container pNone page mtNone>
-                    <PartnersBlock>
-                        <PartnersHeader>
-                            <PartnersHeaderItem>START</PartnersHeaderItem>
-                            <PartnersHeaderItem>EXPERT</PartnersHeaderItem>
-                            <PartnersHeaderItem>INFINITY</PartnersHeaderItem>
-                        </PartnersHeader>
+                    <PartnersItemTitle>
+                        Это медиапроект и исследование «Ясеневой поляны», основанное на уникальных данных Фонда «Со-единение». С 2014 года Фонд ведёт перепись слепоглухих людей. Ресурс будет полезен специалистам и сообществу — тифлопедагогам, сурдологам, специальным психологам, взрослым слепоглухим и родителям детей со слепоглухотой. Кроме того, своей работой мы надеемся привлечь внимание большего количества людей и институтов власти к проблеме слепоглухоты в России.
 
-                    </PartnersBlock>
+                    </PartnersItemTitle>
                 </Container>
             </Page>
         </>
@@ -127,10 +123,12 @@ const PartnersItem = styled.div`
 `;
 
 const PartnersItemTitle = styled.div`
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  margin-right: 200px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 33px;
+    line-height: 40px;
+
+    color: #FFFFFF;
 
   @media (max-width: 767px) {
     font-size: 12px;

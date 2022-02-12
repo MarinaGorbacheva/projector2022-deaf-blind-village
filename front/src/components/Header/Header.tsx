@@ -85,11 +85,11 @@ export const Header: FC<Props> = ({ admPanel }: Props) => {
         setNotify(!notify);
     }
 
-    function handleAuthClick() {
+    function handleNeedHelpClick() {
         history.push(`/login/0`);
     }
 
-    function handleLogoClick() {
+    function handleWantHelpClick() {
         history.push('/');
     }
 
@@ -98,9 +98,6 @@ export const Header: FC<Props> = ({ admPanel }: Props) => {
             <HeaderWrap header={header}>
                 <Container style={{ position: 'relative' }}>
                     <HeaderInner>
-                        {/* <HeaderLogo onClick={handleLogoClick}>
-                            <Logo className="logo" />
-                        </HeaderLogo> */}
                         <HeaderMenu open={open}>
                             <Nav
                                 onClose={onClose}
@@ -112,13 +109,14 @@ export const Header: FC<Props> = ({ admPanel }: Props) => {
                                 lang={lang}
                             />
                         </HeaderMenu>
-                        <Btn primary onClick={handleAuthClick}>
-                            Мне нужна
-                            помощь
+                        <Btn yellow onClick={handleWantHelpClick}>
+                            Xочу помочь
                         </Btn>
+                        <Btn onClick={handleNeedHelpClick}>
+                            Мне нужна помощь
+                        </Btn>
+
                         <MenuBtn open={open} onClick={() => setOpen(!open)}>
-                            <span></span>
-                            <span></span>
                         </MenuBtn>
                     </HeaderInner>
                 </Container>

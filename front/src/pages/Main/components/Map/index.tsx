@@ -121,13 +121,15 @@ export const Map: FC = () => {
 
     return (
         <>
-            <Page id="map" pBottom>
+            <Page id="Map" pBottom>
                 <Container>
-                    <H2 center>Что такое «деревня»?</H2>
+                    <H2 center>Карта</H2>
                 </Container>
-                <Container pNone page mtNone>
+                <Container pNone page mtNone
+                    style={{
+
+                    }}>
                     <DeckGL
-                        // style={{ position: "relative" }}
                         viewState={viewState}
                         onViewStateChange={(data: any) => setViewState(data.viewState)}
                         controller={true}
@@ -155,6 +157,6 @@ export const Map: FC = () => {
 
 
 const Deck = styled(DeckGL)`
-    position: relative;;
+    
 `;
 

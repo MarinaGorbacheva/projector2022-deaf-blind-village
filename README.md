@@ -1,26 +1,16 @@
 
-# Деревня слепоглухих | Прожектор 2022 [![Awesome](https://img.helpnetsecurity.com/wp-content/uploads/2016/05/09112845/person.jpg)](https://github.com/marriuss/projector2022-deaf-blind-village#readme)
-> Какой-то текст заголовка README
+# Деревня слепоглухих
 
+## Прожектор 2022. Хакатон Теплицы социальных технологий и Новой газеты
 
-## Параграф
+Координатор проекта и сотрудник ресурсного центра "Ясенева поляна" — Лера Душкина
 
-- [ai/size-limit](https://github.com/ai/size-limit#readme) - Ссылка с описанием
+Графический дизайнер — Александра Мороз
 
+Frontend-разработчик — Алим Шогенов
 
-- ["Top ten reasons why I won’t use your open source project"](https://changelog.com/posts/top-ten-reasons-why-i-wont-use-your-open-source-project) - *Какой-то текст*
+Backend-разработчик — Марина Горбачева
 
+Научный консультант — Алина Хохлова
 
-## Стэк/Инструменты/Данные
-
-
-- [maintainer.io](https://maintainer.io/) - Free README Ссылка с описанием
-
-## Contribute
-
-Contributions are always welcome!
-Please read the [contribution guidelines](contributing.md) first.
-
-
-Прожектор 2022
-©
+###### 11-13 февраля 2022

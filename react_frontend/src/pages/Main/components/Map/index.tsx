@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { IconLayer } from "@deck.gl/layers";
 import { StaticMap } from "react-map-gl";
 import { HtmlOverlay, HtmlOverlayItem } from "@nebula.gl/overlays";
@@ -50,6 +50,17 @@ const INITIAL_VIEW_STATE = {
 };
 
 export const Map: FC = () => {
+
+    useEffect(() => {
+        (async () => {
+            const response = await fetch('http://localhost:5000/persons');
+            const json = await response.json();
+            console.log('json', json)
+        })()
+    }, []);
+
+
+
     const [viewState, setViewState] = useState(INITIAL_VIEW_STATE);
 
     const [selectedIcon, setSelectedIcon] = useState<any>(null);

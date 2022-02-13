@@ -1,9 +1,14 @@
 from flask import current_app as app, jsonify
-from .models import Person, persons_schema
+from .data_processing import PreprocessedData
 
-persons = persons_schema.dump(Person.query.all())
 
 @app.route("/")
-@app.route("/index", methods=["GET"])
+@app.route("/index")
 def index():
-    return jsonify(persons)
+    return "OK"
+
+
+@app.route("/persons", methods=["GET"])
+def get_persons():
+    print(jsonify(PreprocessedData.PERSONS))
+    return jsonify(PreprocessedData.PERSONS)

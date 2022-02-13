@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import styled from 'styled-components';
 import { Footer } from '../../components/Footer/Footer';
 import { Header } from '../../components/Header/Header';
@@ -9,6 +9,7 @@ import { DbVillageIs } from './components/DbVillageIs';
 import { DeathBlindIs } from './components/DeathBlindIs';
 import { ProblemIs } from './components/ProblemIs';
 import { Materials } from './components/Materials';
+import { Chart } from './components/Chart';
 
 import { Map } from './components/Map';
 // import { Container } from '../../../components/UI/Container';
@@ -27,6 +28,9 @@ export const Main: FC = () => {
 
 
                 <Map />
+
+                <Chart />
+
                 <HowToHelp />
 
                 <Footer />
@@ -34,10 +38,6 @@ export const Main: FC = () => {
         </div>
     );
 };
-
-const Title = styled.h1`
-
-`;
 
 const MainPage = styled(Page)`
   position: relative;

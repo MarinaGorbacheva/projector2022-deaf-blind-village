@@ -7,25 +7,8 @@ import { Container } from '../../../../components/UI/Container';
 import { Page } from '../../../../components/UI/Page';
 import { H2 } from '../../../../components/UI/Heading';
 import styled from "styled-components";
+import { regionsWithCoordinates } from '../../../../helpers/regionsWithCoordinates';
 
-const coordinatesData = [
-    {
-        name: "г. Москва, Москва",
-        code: "77",
-        address: "3601 глухонемых",
-        entries: "3481",
-        exits: "3616",
-        coordinates: [37.6173, 55.7558]
-    },
-    {
-        name: "г. Майкоп, Республика Адыгея",
-        code: "01",
-        address: "3452 глухонемых",
-        entries: "3481",
-        exits: "3616",
-        coordinates: [40.1047, 44.6076]
-    }
-];
 
 const ICON_MAPPING = {
     marker: {
@@ -46,19 +29,24 @@ const ICON_COLOR_HOVERED = [255, 204, 0];
 const INITIAL_VIEW_STATE = {
     latitude: 55.7558,
     longitude: 37.6173,
-    zoom: 9
+    zoom: 1
 };
 
 export const Map: FC = () => {
 
-    useEffect(() => {
-        (async () => {
-            const response = await fetch('http://localhost:5000/persons');
-            const json = await response.json();
-            console.log('json', json)
-        })()
-    }, []);
+    // useEffect(() => {
+    //     (async () => {
+    //         const response = await fetch('http://localhost:5000/persons');
+    //         const json = await (response.json());
+    //         const parsed = JSON.parse(json);
 
+    //         const dat = parsed.map((str: any) => ({
+    //             ...str,
+    //             coordinates: [37.6173, 55.7558],
+    //         }))
+    //         console.log('data', (dat))
+    //     })()
+    // }, []);
 
 
     const [viewState, setViewState] = useState(INITIAL_VIEW_STATE);
@@ -68,7 +56,7 @@ export const Map: FC = () => {
 
     const iconLayer = new IconLayer({
         id: "IconLayer",
-        data: coordinatesData,
+        data: regionsWithCoordinates,
         getIcon: (d: any) => "marker",
         getPosition: (d: any) => d.coordinates,
         getSize: (d: any) => (d === selectedIcon ? 1.5 : 1) * ICON_SIZE,
@@ -112,7 +100,7 @@ export const Map: FC = () => {
         <HtmlOverlay onClick={() => console.log("HtmlOverlay clicked")} key="1">
             <HtmlOverlayItem
                 style={{ pointerEvents: "all" }}
-                coordinates={selectedIcon.coordinates}
+                coordinates={selectedIcon.coordinates.reverse()}
                 onClick={() => console.log("HtmlOverlayItem clicked")}
                 onPointerUp={(event: any) => event.preventDefault()}
                 onMouseMove={(event: any) => event.preventDefault()}
@@ -121,8 +109,12 @@ export const Map: FC = () => {
                     style={{ backgroundColor: "white" }}
                     onClick={() => console.log("HtmlOverlayItem child clicked")}
                 >
-                    <div>{selectedIcon.name}</div>
-                    <div>{selectedIcon.address}</div>
+                    <div>Субъект: {selectedIcon.subject}</div>
+                    <div>Средний возраст: {selectedIcon.mean_age}</div>
+                    <div>Общее количество: {selectedIcon.entries}</div>
+                    <div>Количество мужчин: {selectedIcon.males}</div>
+                    <div>Количество женщин: {selectedIcon.females}</div>
+                    <div>Количество детей: {selectedIcon.kids}</div>
                 </div>
             </HtmlOverlayItem>
         </HtmlOverlay>
@@ -165,9 +157,3 @@ export const Map: FC = () => {
         </>
     );
 }
-
-
-const Deck = styled(DeckGL)`
-    
-`;
-

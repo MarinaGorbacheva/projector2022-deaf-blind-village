@@ -5,6 +5,7 @@ from flask_marshmallow import Marshmallow
 from flask_cors import CORS
 from .config import Config
 
+
 DB = SQLAlchemy()
 MIGRATE = Migrate()
 MA = Marshmallow()

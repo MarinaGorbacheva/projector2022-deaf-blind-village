@@ -71,4 +71,10 @@ class PersonSchema(MA.SQLAlchemyAutoSchema):
         return None
 
 
+class DisabilityInfoSchema(MA.Schema):
+    class Meta:
+        fields = ("hearing_loss_etiology", "sight_loss_etiology", "persons.birthdate")
+
+
 persons_schema = PersonSchema(many=True)
+disability_info_schema = DisabilityInfoSchema(many=True)

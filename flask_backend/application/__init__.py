@@ -9,6 +9,7 @@ DB = SQLAlchemy()
 MIGRATE = Migrate()
 MA = Marshmallow()
 
+
 def create_app():
     app = Flask(__name__, instance_relative_config=False)
     app.config.from_object(Config)
@@ -23,4 +24,3 @@ def create_app():
         DB.create_all()
 
     return app
-

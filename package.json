@@ -1,7 +1,12 @@
 {
   "name": "frontend",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "a really cool app",
+  "engines": {
+    "node": "16.x",
+    "npm": "6.x"
+  },
   "dependencies": {
     "@deck.gl/aggregation-layers": "^8.6.8",
     "@deck.gl/core": "^8.6.8",

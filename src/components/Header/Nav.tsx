@@ -42,11 +42,6 @@ export const Nav: FC<Props> = ({ onClose }: Props) => {
                     </StyledLink>
                 </ListItem>
                 <ListItem>
-                    <StyledLink to="/#" onClick={onClose} scroll={(el: any) => scrollWidthOffset(el)}>
-                        дашборд
-                    </StyledLink>
-                </ListItem>
-                <ListItem>
                     <StyledLink to="/#HowToHelp" onClick={onClose} scroll={(el: any) => scrollWidthOffset(el)}>
                         как помочь
                     </StyledLink>

@@ -14,3 +14,4 @@ declare module '@nebula.gl/overlays' {
 	export const HtmlOverlay: any;
 	export const HtmlOverlayItem : any;
 }
+

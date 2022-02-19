@@ -27,9 +27,9 @@ const ICON_COLOR_SELECTED = [140, 0, 0];
 const ICON_COLOR_HOVERED = [255, 204, 0];
 
 const INITIAL_VIEW_STATE = {
-    latitude: 55.7558,
-    longitude: 37.6173,
-    zoom: 1
+    latitude: 60.47015997786214,
+    longitude: 70.19963742858069,
+    zoom: 3
 };
 
 export const Map: FC = () => {

@@ -177,7 +177,7 @@ export const regionsWithCoordinates = [
       kids: 16,
       females: 38,
       males: 24,
-      coordinates: [58.62769128977456, 49.62372004208951]
+      coordinates: [58.62769128977456, 53.62372004208951]
     },
     {
       subject: "Костромская область",

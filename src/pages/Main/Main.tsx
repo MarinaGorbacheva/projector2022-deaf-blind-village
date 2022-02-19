@@ -9,7 +9,9 @@ import { DbVillageIs } from './components/DbVillageIs';
 import { DeathBlindIs } from './components/DeathBlindIs';
 import { ProblemIs } from './components/ProblemIs';
 import { Materials } from './components/Materials';
+import { Hypotheses } from './components/Hypotheses';
 import { Chart } from './components/Chart';
+import { Methods } from './components/Methods';
 
 import { Map } from './components/Map';
 // import { Container } from '../../../components/UI/Container';
@@ -23,11 +25,13 @@ export const Main: FC = () => {
                 <Banner />
                 <DbVillageIs />
                 <DeathBlindIs />
+                <Map />
                 <ProblemIs />
                 <Materials />
+                <Hypotheses />
+                <Methods />
 
 
-                <Map />
 
                 <Chart />
 

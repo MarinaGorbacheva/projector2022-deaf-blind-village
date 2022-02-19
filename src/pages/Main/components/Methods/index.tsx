@@ -1,57 +1,43 @@
-import React, { useState, useRef, useEffect, FC } from 'react';
+import { FC } from 'react';
 import { Container } from '../../../../components/UI/Container';
 import { H2 } from '../../../../components/UI/Heading';
 import { Page } from '../../../../components/UI/Page';
 import styled from 'styled-components';
-import Graph from '../../../../assets/img/Graph.png';
 
 
-export const ProblemIs: FC = () => {
-    const [oldLink, setOldLink] = useState('');
-    const [link, setLink] = useState('');
-    const [value, setValue] = useState('');
-    const inputRef = useRef<HTMLInputElement>(null);
-
-
-    useEffect(() => {
-        if (inputRef && inputRef.current && value) {
-            inputRef.current.focus();
-        }
-    }, [value, inputRef]);
-
-    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const id = e.target.value;
-        setValue(id);
-        const newLink = oldLink.replace(/\d{5,}/g, '');
-        if (id === '') {
-            setLink(newLink);
-        } else {
-            setLink(newLink + id);
-        }
-    };
-
-    const toLink = () => {
-        window.open(link);
-    };
-
+export const Methods: FC = () => {
 
     return (
         <>
-            <Page id="ProblemIs" pBottom>
+            <Page id="Methods" pBottom>
                 <Container>
-                    <H2>ПРОБЛЕМА</H2>
+                    <H2>МЕТОДЫ</H2>
                 </Container>
                 <Container pNone page mtNone>
                     <PartnersItemTitle>
-                        В России почти нет официальной статистики о людях со слепоглухотой. Официальные данные переписи населения содержат лишь информацию о тех, кто говорит на русском жестовом языке — глухих. Из-за крайней недоступности участия в переписи для людей с нарушениями зрения и слуха, мы можем получить лишь очень поверхностные данные. В целом же, общество не знает о том, какой бывает слепоглухота, какие люди подвержены такому нарушению и почему.
+                        Во-первых, мы провели статистический анализ и посмотрели общие цифры:<br />
+                        <br />
+                        <LeftSide>
+                            1. количество людей со слепоглухотой в базе на начало 2022 года — 4391 человек со слепоглухотой. Из них старше 18-ти лет     — 3672 человека. У остальных 19-ти — возраст неизвестен.
+                            <br />
+                            <br />
+                            2. количество детей — 700 человек,
+                            <br />
+                            <br />
+                            3. количество людей старше 18-ти лет — 3672,
+                            самый частый синдром и диагноз у детей — ретинопатия недоношенных, внутриутробные инфекции, нарушения ЦНС
+                        </LeftSide>
+
                     </PartnersItemTitle>
-                    <br />
-                    <img src={Graph} alt="fireSpot" />
                 </Container>
             </Page>
         </>
     );
 };
+
+const LeftSide = styled.div`
+    padding-left: 50px;
+`;
 
 const PartnersBlock = styled.div`
   width: 100%;

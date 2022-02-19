@@ -2,7 +2,10 @@ import { FC } from 'react';
 import { Container } from '../UI/Container';
 import styled from 'styled-components/macro';
 import { ReactComponent as FooterLogo } from '../../assets/svg/whiteFooterLogo.svg';
-import { ReactComponent as Tg } from '../../assets/svg/tg2.svg';
+import Group1 from '../../assets/img/Group1.png';
+import Group5 from '../../assets/img/Group5.png';
+import Gazeta from '../../assets/img/logo-novaya-gazeta.png';
+import Teplitsa from '../../assets/img/teplitsa.png';
 import { NavHashLink } from 'react-router-hash-link';
 
 type FooterType = {
@@ -19,15 +22,6 @@ export const Footer: FC<FooterType> = ({ other }: FooterType) => {
     return (
         <FooterBlock other={other}>
             <FooterContainer>
-                {/* <FooterHeader>
-                    <P>Прожектор 2022.</P>
-                    <FooterLinks>
-                        <FooterLink to="/#banner" scroll={(el) => scrollWidthOffset(el)}>
-                            Наверх
-                        </FooterLink>
-                    </FooterLinks>
-                </FooterHeader> */}
-
                 <DescBlock>
                     <FooterDesc>
                         Хакатон Теплицы социальных технологий и Новой газеты
@@ -57,9 +51,20 @@ export const Footer: FC<FooterType> = ({ other }: FooterType) => {
                     </FooterDesc>
                 </DescBlock>
             </FooterContainer>
+            {/* <LoogoContainer>
+                <img src={Group1} alt="fireSpot" />
+                <img src={Group5} alt="fireSpot" />
+                <img src={Gazeta} alt="fireSpot" />
+                <img src={Teplitsa} alt="fireSpot" />
+            </LoogoContainer> */}
         </FooterBlock >
     );
 };
+
+const LoogoContainer = styled(Container)`
+
+
+`;
 
 const FooterContainer = styled(Container)`
     display: flex;
